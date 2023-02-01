@@ -54,7 +54,8 @@ const Characters = () => {
                     <span className="text-justify w-full md:text-3xl text-lg">
                       {character.description}
                     </span>
-                    <div className="flex my-4 w-full text-center justify-center">
+                      <p className="mt-2">Age-{character.age}</p>
+                    <div className="flex  w-full text-center justify-center">
                       specie-<span>{character.specie}</span>
                     </div>
                   </div>
