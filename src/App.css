@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #c6551e;
+}
+
+.textShadows {
+  text-shadow: 0px 0px 5px #000000;
+}
+
+.bg-hero {
+  max-width: 100%;
+  background: url("https://chainsawman.dog/assets/img/index/main_img.jpg")
+    no-repeat center center/contain;
+  aspect-ratio: 1 / 1.43;
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
