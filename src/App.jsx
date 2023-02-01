@@ -1,5 +1,5 @@
 import React from "react";
-import { Hero } from "./pages";
+import { Characters, Hero } from "./pages";
 import "./App.css";
 import Navbar from "./components/Navbar";
 
@@ -10,6 +10,10 @@ const App = () => {
         <Navbar />
         <section className="snap-start aspect-video">
           <Hero />
+        </section>
+
+        <section className="snap-center">
+          <Characters />
         </section>
       </div>
     </>

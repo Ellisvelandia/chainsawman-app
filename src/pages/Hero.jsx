@@ -10,7 +10,6 @@ const Hero = () => {
         "https://chainsawman-api.onrender.com/chainsawman/v1/getPoster"
       );
       setPosters(res.data.poster);
-      console.log(res.data.poster);
     };
     getPoster();
   }, []);
@@ -19,10 +18,10 @@ const Hero = () => {
     <div className="h-auto flex flex-col space-y-8 items-center justify-center bg-hero">
       {posters.map((poster) => (
         <div
-          key={poster._id}
-          className="relative grid items-center justify-items-center h-auto textShadows"
+        key={poster._id}
+        className="relative grid items-center justify-items-center h-auto textShadows"
         >
-          <img src={poster.logo} alt="logo" className="md:h-80 h-48 aspect-auto mt-28" />
+          <img src={poster.logo} alt="logo" className="md:h-80 h-48 aspect-auto mt-28 chain-logo" />
           <span className="md:text-center text-justify leading-tight md:w-4/5 mx-auto md:text-3xl text-lg px-4 font-bold text-stone-100">
             {poster.sypnosis}
           </span>
@@ -36,7 +35,7 @@ const Hero = () => {
               allowFullScreen
               width="100%"
               height="100%"
-              className="aspect-video xl:h-[550px] md:mt-0 -mt-4"
+              className="aspect-video xl:h-[550px] md:mt-0 -mt-8"
             />
           </div>
           <div className="flex text-center gap-8 my-4 md:text-2xl text-base text-stone-100">
