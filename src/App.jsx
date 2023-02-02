@@ -1,7 +1,7 @@
 import React from "react";
-import { Characters, Hero } from "./pages";
+import { Characters, Comic, Hero } from "./pages";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import { Footer, Navbar } from "./components";
 
 const App = () => {
   return (
@@ -15,6 +15,12 @@ const App = () => {
         <section className="snap-center">
           <Characters />
         </section>
+
+        <section className="snap-center">
+          <Comic />
+        </section>
+
+        <Footer />
       </div>
     </>
   );

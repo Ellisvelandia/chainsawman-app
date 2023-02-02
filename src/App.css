@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 #root {
   max-width: 100%;
@@ -8,12 +9,31 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  -webkit-text-size-adjust: 100%;
   background-color: #000;
+  color: #fff;
+  font-family: "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "メイリオ",
+    Meiryo, sans-serif;
+  font-feature-settings: "palt";
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.07em;
+  line-height: 1.8;
+  word-wrap: break-word;
 }
 
 .textShadows {
   text-shadow: 0px 0px 5px #000000;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: red;
+  transform-origin: 0%;
 }
 
 .bg-hero {
@@ -28,7 +48,6 @@ body {
   display: none;
 }
 
-
 @media screen and (max-width: 1280px) {
   .bg-hero {
     width: 100vw;
@@ -39,8 +58,6 @@ body {
   }
 }
 
-
-
 @media screen and (max-width: 1024px) {
   .bg-hero {
     width: 100vw;
@@ -50,7 +67,6 @@ body {
     opacity: 0;
   }
 }
-
 
 @media screen and (max-width: 912px) {
   .bg-hero {
@@ -63,7 +79,6 @@ body {
   }
 }
 
-
 @media screen and (max-width: 820px) {
   .bg-hero {
     width: 100vw;
@@ -74,8 +89,6 @@ body {
     opacity: 0;
   }
 }
-
-
 
 @media screen and (max-width: 768px) {
   .bg-hero {
@@ -89,7 +102,6 @@ body {
   }
 }
 
-
 @media screen and (max-width: 540px) {
   .bg-hero {
     width: 100vw;
@@ -97,7 +109,6 @@ body {
     margin-top: 90px;
   }
 }
-
 
 @media screen and (max-width: 414px) {
   .bg-hero {
@@ -107,7 +118,6 @@ body {
   }
 }
 
-
 @media screen and (max-width: 375px) {
   .bg-hero {
     width: 100vw;
@@ -115,7 +125,6 @@ body {
     margin-top: 80px;
   }
 }
-
 
 @media screen and (max-width: 360px) {
   .bg-hero {

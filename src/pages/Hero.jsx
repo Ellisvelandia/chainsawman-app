@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [posters, setPosters] = useState([]);
@@ -15,18 +16,32 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="h-auto flex flex-col space-y-8 items-center justify-center bg-hero">
+    <motion.div
+      className="h-auto flex flex-col space-y-8 items-center justify-center bg-hero"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+      exit={{ opacity: 1 }}
+    >
       {posters.map((poster) => (
-        <div
-        key={poster._id}
-        className="relative grid items-center justify-items-center h-auto textShadows"
+        <motion.div
+          key={poster._id}
+          className="relative grid items-center justify-items-center h-auto textShadows"
         >
-          <img src={poster.logo} alt="logo" className="md:h-80 h-48 aspect-auto mt-28 chain-logo" />
+          <img
+            src={poster.logo}
+            alt="logo"
+            className="md:h-80 h-48 aspect-auto mt-28 chain-logo"
+          />
           <span className="md:text-center text-justify leading-tight md:w-4/5 mx-auto md:text-3xl text-lg px-4 font-bold text-stone-100">
             {poster.sypnosis}
           </span>
           <div className="w-full">
-            <img src={poster.poster} alt="poster" className="w-full opacity-40 -z-10 logo" />
+            <img
+              src={poster.poster}
+              alt="poster"
+              className="w-full opacity-40 -z-10 logo"
+            />
             <iframe
               title=""
               src={poster.trailer}
@@ -48,9 +63,9 @@ const Hero = () => {
               <span>{poster.Genre}</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
