@@ -32,7 +32,7 @@ const Comic = () => {
 
   return (
     <>
-      <div className="h-auto w-auto md:mt-8 mt-20 px-4">
+      <div className="h-[calc(100%+50rem)] w-auto md:mt-8 mt-20 px-4">
         <Swiper
           modules={[
             Navigation,
@@ -54,7 +54,10 @@ const Comic = () => {
         >
           {comics.map((comic) => (
             <SwiperSlide key={comic._id}>
-              <div className=".p-comics hover:scale-105 xl:w-[400px] lg:w-[290px]  mr-6  justify-center flex">
+              <div
+                className="hover:scale-105 xl:w-[400px] lg:w-[310px] md:w-[250px] sm:w-[200px] w-[calc(100%+2.5rem)]
+                      h-full object-cover mr-6  justify-center flex"
+              >
                 <div className="relative flex h-full w-full">
                   <a href={comic.link} target="_blank">
                     <img
