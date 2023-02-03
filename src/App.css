@@ -100,6 +100,10 @@ body {
   .chain-logo {
     opacity: 0;
   }
+
+  .p-comics{
+    width: calc(100% - 8.53333vw);
+  }
 }
 
 @media screen and (max-width: 540px) {

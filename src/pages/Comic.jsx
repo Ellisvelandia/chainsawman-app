@@ -1,13 +1,21 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+  Keyboard,
+} from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/autoplay";
+import "swiper/css/keyboard";
 
 const Comic = () => {
   const [comics, setComics] = useState([]);
@@ -15,7 +23,7 @@ const Comic = () => {
   useEffect(() => {
     const getComics = async () => {
       const res = await axios.get(
-        "https://chainsawman-api.onrender.com/chainsawman/v1/getComic"
+        "https://colorful-fish-handbag.cyclic.app/chainsawman/v1/getComic"
       );
       setComics(res.data.comic);
     };
@@ -26,10 +34,18 @@ const Comic = () => {
     <>
       <div className="h-auto w-auto md:mt-8 mt-20 px-4">
         <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          modules={[
+            Navigation,
+            Pagination,
+            Scrollbar,
+            A11y,
+            Autoplay,
+            Keyboard,
+          ]}
           spaceBetween={50}
           slidesPerView={3}
           navigation
+          keyboard={{ enabled: true }}
           autoplay={{ delay: 3000 }}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
@@ -38,13 +54,13 @@ const Comic = () => {
         >
           {comics.map((comic) => (
             <SwiperSlide key={comic._id}>
-              <div className="hover:scale-105 xl:w-[390px] lg:w-[290px] md:w-[220px] sm:w-[140px] w-[125px] mr-6  justify-center flex">
+              <div className=".p-comics hover:scale-105 xl:w-[400px] lg:w-[290px]  mr-6  justify-center flex">
                 <div className="relative flex h-full w-full">
                   <a href={comic.link} target="_blank">
                     <img
                       src={comic.comic}
                       alt="comics"
-                      className="object-fill opacity-70 hover:opacity-100"
+                      className="object-fill lg:opacity-70 lg:hover:opacity-100"
                     />
                   </a>
                   <img

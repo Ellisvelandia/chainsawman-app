@@ -8,7 +8,7 @@ const Hero = () => {
   useEffect(() => {
     const getPoster = async () => {
       const res = await axios.get(
-        "https://chainsawman-api.onrender.com/chainsawman/v1/getPoster"
+        "https://colorful-fish-handbag.cyclic.app/chainsawman/v1/getPoster"
       );
       setPosters(res.data.poster);
     };
