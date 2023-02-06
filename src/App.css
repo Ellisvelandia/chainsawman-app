@@ -28,16 +28,6 @@ body {
   text-shadow: 0px 0px 5px #000000;
 }
 
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10px;
-  background: red;
-  transform-origin: 0%;
-}
-
 .bg-hero {
   max-width: 100%;
   background: url("https://chainsawman.dog/assets/img/index/main_img.jpg")
@@ -48,6 +38,74 @@ body {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.container {
+  width: 95%;
+  min-height: 100vh;
+  position: relative;
+  margin: 0 auto;
+}
+
+.container .media-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+  margin: 20px auto;
+}
+
+.container .media-container .media {
+  height: 220px;
+  width: 100%;
+  border: 1px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.container .media-container .media :is(iframe, img) {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s linear;
+}
+
+.container .media-container .media:hover :is(iframe, img) {
+  transform: scale(1.1);
+}
+
+.container .popup-media {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 100;
+}
+
+.container .popup-media :is(img, iframe) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  max-width: 50%;
+  max-height: 50%;
+  object-fit: contain;
+  border: 1px solid #fff;
+}
+
+.container .popup-media button {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 40px;
+  font-weight: 900;
+  z-index: 100;
+  cursor: pointer;
+  color: #fc0c0c;
+  user-select: none;
 }
 
 @media screen and (max-width: 1280px) {
@@ -78,6 +136,10 @@ body {
   }
   .chain-logo {
     opacity: 0;
+  }
+
+  .container .popup-media :is(img, iframe) {
+    max-width: 95%;
   }
 }
 

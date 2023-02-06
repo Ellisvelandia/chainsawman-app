@@ -1,5 +1,5 @@
 import React from "react";
-import { Characters, Comic, Hero } from "./pages";
+import { Characters, Comic, Hero, Movie } from "./pages";
 import "./App.css";
 import { Footer, Navbar } from "./components";
 
@@ -18,6 +18,10 @@ const App = () => {
 
         <section className="snap-center">
           <Comic />
+        </section>
+
+        <section className="snap-center">
+          <Movie />
         </section>
 
         <Footer />

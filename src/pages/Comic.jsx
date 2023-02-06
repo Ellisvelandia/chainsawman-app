@@ -37,7 +37,7 @@ const Comic = () => {
           <img
             src="https://chainsawman.dog/assets/img/common/nav/nav_comics.svg"
             alt="comic"
-            className="md:w-[400px] w-60 opacity-100 blur-effect-dark rounded z-10"
+            className="md:w-[350px] w-60 opacity-100 rounded"
           />
         </div>
         <Swiper

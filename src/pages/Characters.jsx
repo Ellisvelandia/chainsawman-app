@@ -23,7 +23,7 @@ const Characters = () => {
           <img
             src="https://chainsawman.dog/assets/img/common/nav/nav_chara.svg"
             alt="comic"
-            className="md:w-[500px] w-72 opacity-100 blur-effect-dark rounded z-10"
+            className="md:w-[500px] w-72 opacity-100 rounded"
           />
         </div>
         <div className="relative w-full flex">
