@@ -25,12 +25,12 @@ const Navbar = () => {
       <header
         className={
           !navState
-            ? "flex absolute top-0 md:h-[16vh] items-center justify-center left-0 right-0 opacity-100 z-50 blur-effect-dark w-full"
+            ? "flex absolute top-0 md:h-[16vh] items-center justify-center left-0 right-0 opacity-100 z-50 w-full blur-effect-dark"
             : "fixed top-0 left-0 right-0 h-[16vh] flex items-center justify-center opacity-100 z-[200] blur-effect-theme w-full"
         }
       >
         <nav className="flex items-center justify-between chain-container ">
-          <div className="flex items-center w-full md:justify-start justify-center">
+          <div className="flex items-center w-full justify-start">
             <img
               src={logo}
               alt="logo/img"

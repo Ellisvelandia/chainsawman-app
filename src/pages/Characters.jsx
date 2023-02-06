@@ -19,7 +19,14 @@ const Characters = () => {
   return (
     <>
       <div className="h-auto flex flex-col  w-full justify-center mx-auto items-center xl:mt-20 lg:mt-48 md:mt-64 mt-72 px-4">
-        <div className="relative w-full flex  bg-[#000]">
+        <div className="w-full flex justify-center my-8">
+          <img
+            src="https://chainsawman.dog/assets/img/common/nav/nav_chara.svg"
+            alt="comic"
+            className="md:w-[500px] w-72 opacity-100 blur-effect-dark rounded z-10"
+          />
+        </div>
+        <div className="relative w-full flex">
           <Carousel
             showThumbs={false}
             autoPlay={true}
@@ -31,17 +38,17 @@ const Characters = () => {
             {mains.map((character) => {
               return (
                 <div
-                  className="h-full w-full flex lg:flex-row flex-col space-y-2 items-center justify-center md:p-20 md:mt-4"
+                  className="h-full w-full flex lg:flex-row flex-col space-y-2 items-center justify-center md:p-20 md:mt-4 mb-14"
                   key={character._id}
                 >
-                  <h2 className="text-3xl font-extrabold md:my-4 my-6 lg:rotate-90 tracking-widest">
+                  <h2 className="text-3xl outline-none font-extrabold md:my-4 my-6 lg:rotate-90 tracking-widest">
                     {character.name}
                   </h2>
                   <div className="flex w-auto flex-col">
                     <img
                       src={character.image}
                       alt="image"
-                      className="h-[450px]"
+                      className="sm:h-[550px] h-[400px]"
                       loading="lazy"
                     />
                     <p>{character.kanji}</p>

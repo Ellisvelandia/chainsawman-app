@@ -17,7 +17,7 @@ const Hero = () => {
 
   return (
     <motion.div
-      className="h-auto flex flex-col space-y-8 items-center justify-center bg-hero"
+      className="h-auto flex flex-col space-y-8 items-center justify-center bg-hero sm:mt-[16vh]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeOut", duration: 1 }}
@@ -32,8 +32,9 @@ const Hero = () => {
             src={poster.logo}
             alt="logo"
             className="md:h-80 h-48 aspect-auto mt-28 chain-logo"
+            loading="lazy"
           />
-          <span className="md:text-center text-justify leading-tight md:w-4/5 mx-auto md:text-3xl text-lg px-4 font-bold text-stone-100">
+          <span className="text-justify leading-tight md:w-4/5 mx-auto md:text-3xl xs:text-lg text-sm px-4 font-bold text-stone-100">
             {poster.sypnosis}
           </span>
           <div className="w-full">
@@ -41,6 +42,7 @@ const Hero = () => {
               src={poster.poster}
               alt="poster"
               className="w-full opacity-40 -z-10 logo"
+              loading="lazy"
             />
             <iframe
               title=""
