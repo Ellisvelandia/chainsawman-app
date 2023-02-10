@@ -90,7 +90,8 @@ const Comic = () => {
                     src={comic.num}
                     alt="number/comic"
                     className="absolute top-2 md:h-56 h-56 tracking-widest"
-                  />
+                    loading="lazy"
+                    />
                 </div>
               </div>
             </SwiperSlide>
