@@ -219,4 +219,8 @@ body {
   .logo {
     margin-bottom: -2rem;
   }
+
+  .posterImg {
+    width: 100%;
+  }
 }

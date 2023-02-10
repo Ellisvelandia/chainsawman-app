@@ -20,6 +20,17 @@ import "swiper/css/keyboard";
 const Comic = () => {
   const [comics, setComics] = useState([]);
 
+  const [screenSize, setScreenSize] = useState(window.screen.width);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.screen.width);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, [screenSize]);
+
   useEffect(() => {
     const getComics = async () => {
       const res = await axios.get(
@@ -32,7 +43,7 @@ const Comic = () => {
 
   return (
     <>
-      <div className="h-[calc(100%+50rem)] w-auto md:my-16 my-24 px-1">
+      <div className="h-[calc(100%+50rem)] w-full md:my-16 my-24 px-1">
         <div className="w-full flex justify-center my-20">
           <img
             src="https://chainsawman.dog/assets/img/common/nav/nav_comics.svg"
@@ -49,35 +60,36 @@ const Comic = () => {
             Autoplay,
             Keyboard,
           ]}
-          spaceBetween={50}
-          slidesPerView={3}
+          slidesPerView={
+            screenSize < 768
+              ? 1
+              : screenSize >= 768 && screenSize < 1024
+              ? 2
+              : 3
+          }
+          spaceBetween={12}
           navigation
           keyboard={{ enabled: true }}
           autoplay={{ delay: 3000 }}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
           {comics.map((comic) => (
             <SwiperSlide key={comic._id}>
-              <div
-                className="hover:scale-105 xl:w-[400px] lg:w-[310px] md:w-[250px] sm:w-[200px] w-[calc(100%+2.5rem)]
-                      h-full object-cover mr-6 mt-10 justify-center flex"
-              >
-                <div className="relative flex h-full w-full">
+              <div className="hover:scale-105 w-full gap-6 h-full object-fill mt-10 justify-center flex items-center">
+                <div className="relative flex h-full w-full lg:px-4 px-1">
                   <a href={comic.link} target="_blank">
                     <img
                       src={comic.comic}
                       alt="comics"
-                      className="object-fill lg:opacity-70 lg:hover:opacity-100 sm:h-full h-[350px]"
+                      className="object-fill lg:opacity-70 lg:hover:opacity-100 h-[650px]"
                       loading="lazy"
                     />
                   </a>
                   <img
                     src={comic.num}
                     alt="number/comic"
-                    className="absolute top-2 md:h-56 h-24 tracking-widest"
+                    className="absolute top-2 md:h-56 h-56 tracking-widest"
                   />
                 </div>
               </div>

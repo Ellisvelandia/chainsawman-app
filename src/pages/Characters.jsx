@@ -18,7 +18,7 @@ const Characters = () => {
 
   return (
     <>
-      <div className="h-auto flex flex-col  w-full justify-center mx-auto items-center xl:mt-20 lg:mt-48 md:mt-64 mt-72 px-4">
+      <div className="h-auto flex flex-col  w-full justify-center mx-auto items-center xl:mt-36 lg:mt-80 md:mt-96 mt-64 px-4">
         <div className="w-full flex justify-center my-8">
           <img
             src="https://chainsawman.dog/assets/img/common/nav/nav_chara.svg"
