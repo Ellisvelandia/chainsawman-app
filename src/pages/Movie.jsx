@@ -26,14 +26,22 @@ const Movie = () => {
             className="md:w-[350px] w-60 opacity-100 rounded"
           />
         </div>
-        <div className="media-container">
+        <div className="grid md:grid-cols-2 gap-4 md:px-1 px-0 ">
           {episodes.map((episode) => (
             <div
-              className="media relative flex justify-center"
+              className="media relative flex justify-center p-movie__movieList--thumb"
               key={episode._id}
-              onClick={() => setMovie(episode.movies)}
             >
-              <h2 className="absolute text-center text-xl font-bold shadow-black textShadows">{episode.title}</h2>
+              <h2 className="absolute text-center text-xl font-bold shadow-black textShadows">
+                {episode.title}
+              </h2>
+              <img
+                src="https://chainsawman.dog/assets/img/common/deco/deco_play.png"
+                alt="play"
+                loading="lazy"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer lg:w-24 lg:h-24 md:w-20 md:h-20 h-16 w-16 hover:scale-110 z-10 transition duration-500 ease-in-out"
+                onClick={() => setMovie(episode.movies)}
+              />
               {episode.posters ? (
                 <img src={episode.posters} alt={episode._id} loading="lazy" />
               ) : (
@@ -67,7 +75,7 @@ const Movie = () => {
                 allowFullScreen
                 width="100%"
                 height="100%"
-                className="aspect-video"
+                className="xl:w-[790px] lg:w-[720px] object-fill w-full"
                 loading="lazy"
               />
               <button onClick={() => setMovie(null)}>&times;</button>
