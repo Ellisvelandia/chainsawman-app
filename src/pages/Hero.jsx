@@ -37,7 +37,7 @@ const Hero = () => {
           <span className="text-justify leading-tight md:w-4/5 mx-auto md:text-3xl xs:text-lg text-sm px-4 font-bold text-stone-100">
             {poster.sypnosis}
           </span>
-          <div className="w-full">
+          <div className="w-full ">
             <img
               src={poster.poster}
               alt="poster"

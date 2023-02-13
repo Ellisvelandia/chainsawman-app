@@ -149,6 +149,10 @@ iframe > .video-js {
   max-height: 70%;
   object-fit: fill;
   border: none;
+  -webkit-text-size-adjust: 100%;
+  background: #000
+    url(https://chainsawman.dog/assets/img/common/deco/deco_dotbg.svg) repeat
+    left top/20px;
 }
 
 .container .popup-media button {
