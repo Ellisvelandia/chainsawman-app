@@ -75,7 +75,7 @@ const Movie = () => {
                 allowFullScreen
                 width="100%"
                 height="100%"
-                className="xl:w-[790px] lg:w-[720px] object-fill w-full"
+                className="aspect-video w-full"
                 loading="lazy"
               />
               <button onClick={() => setMovie(null)}>&times;</button>
